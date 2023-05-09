@@ -10,8 +10,26 @@ $c = true; $d = false;
 //print_r($x); print_r("string"); 
 //var_dump($x); var_dump("string"); 
 
-echo $y."--".$a.$c;
+//echo $y."--".$a.$c;
 //var_dump($x);
 //print_r($x);
 //var_dump($b);
-var_dump($b[1]);
+//var_dump($b[1]);
+
+$d = 1;
+$e = 5;
+
+if(($d != $e) || ($d < 4)) 
+{
+    echo "d = e";
+}else{
+    echo "d != e";
+}
+
+if(($d != $e) && ($d < 4)) 
+{
+    echo "d = e";
+}else{
+    echo "d != e";
+}
+

@@ -1,6 +1,7 @@
 <?php
 
 //array
+//https://www.php.net/manual/de/book.array.php
 //array liste, 
 
 $arr = array(1,2,44,5,6,7);

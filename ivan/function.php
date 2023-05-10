@@ -1,21 +1,41 @@
 <?php
 $produkt1 = array('name'=>'Apfel', 'preis'=>10, 'farbe'=>'rot' );
 $produkt2 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
-$produkte = array($produkt1, $produkt2);
+$produkt4 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
+$produkt3 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
+$produkt5 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
+$produkt6 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
+$produkte = array($produkt1, $produkt2, $produkt3, $produkt4);
 
-function namen($param1, $param2)
+function check($value1, $value2, $operator)
 {
+   
+    //1. sind val1 und 2 überhaupt zaheln
+    //2. ob der operator gültig ist
+    //3. DivisionByZeroError
 
+    //https://www.php.net/manual/de/function.is-int.php
+
+    if (!is_int($value1)) return false;
+    if (!is_int($value2)) return false;
+    //if ($value2 == 0) return false;
+    //if (($operator != '+') || ($operator != '-') || ($operator != '*') || ($operator != '/') || ($operator != '%')) return false;
+
+
+    return true;
 }
 
 function calculate_pro($value1, $value2, $operator)
 {
 
-    //1. sind val1 und 2 überhaupt zaheln
-    //2. ob der operator gültig ist
-    //3. DivisionByZeroError
 
-    if (!check($value1, $value2, $operator)) return false;
+
+    if (!check($value1, $value2, $operator)) 
+    {
+        echo "Parameter hauen nicht hin !";
+        return false;
+    }
+    
 
     if ($operator == '+') 
         return $value1 + $value2;
@@ -33,22 +53,3 @@ function calculate_pro($value1, $value2, $operator)
     return $value1 * (($value2 + 100)/100);
 
 }
-
-
-//i=0
-for($i=0; $i<2; $i++)
-{
-    //$produkte[0]
-    foreach($produkte[$i] as $key => $value)
-    {
-
-        //'name'=>'Apfel', 'preis'=>10, 'farbe'=>'rot'
-        if($key == 'preis')
-            //$produkte[0]['preis'] = 10 *1.1
-            $produkte[$i][$key] = calculate_pro($value, 0, '');
-    }
-}
-
-
-var_dump($produkte);
-//anweisuingen

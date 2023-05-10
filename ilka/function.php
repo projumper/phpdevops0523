@@ -9,7 +9,7 @@ function namen($param1, $param2)
 }
 
 $value2 = 20;
-$operator = 'a';
+$operator = '%';
 
 function check($value1, $value2, $operator)
 {
@@ -18,7 +18,9 @@ function check($value1, $value2, $operator)
     $ergebnis3 = false;
 
     //1. sind val1 und 2 überhaupt zaheln
-    if (is_int($value1) && is_int($value2))
+    $zahl1 = is_int($value1);
+    $zahl2 = is_int($value2);
+    if ($zahl1 == true && $zahl2 == true)
         $ergebnis1 = true;
 
     //2. ob der operator gültig ist

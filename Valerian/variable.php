@@ -16,9 +16,8 @@ $c = true; $d = false;
 //var_dump($b);
 //var_dump($b[1]);
 
-$d = 1;
+$d = 3;
 $e = 5;
-
 if(($d != $e) || ($d < 4)) 
 {
     echo "d = e";
@@ -28,8 +27,28 @@ if(($d != $e) || ($d < 4))
 
 if(($d != $e) && ($d < 4)) 
 {
-    echo "d = e";
+    echo "d1 = e1";
 }else{
-    echo "d != e";
+    echo "d1 != e1";
 }
 
+
+
+
+$produkt1 = array('name'=>'Tasse', 'preis'=>2, 'farbe'=>'rot' );
+$produkt2 = array('name'=>'Becher', 'preis'=>1, 'farbe'=>'grün' );
+$produkt3 = array('name'=>'Glas', 'preis'=>5, 'farbe'=>'weis' );
+$produkte = array($produkt1, $produkt2, $produkt3,);
+
+
+var_dump($produkte);
+
+
+for($i=0; $i<3; $i++)
+{
+    foreach($produkte[$i] as $key => $value)
+    {
+        if($key == 'preis')
+            $produkte[$i][$key] = $value *1.5;
+    }
+}

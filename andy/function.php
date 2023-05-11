@@ -1,7 +1,22 @@
 <?php
-$produkt1 = array('name'=>'Apfel', 'preis'=>10, 'farbe'=>'rot' );
-$produkt2 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
-$produkte = array($produkt1, $produkt2);
+
+//use mysqli;
+//use Exception;
+
+$produkte = array();
+
+//https://www.php.net/manual/de/book.mysqli.php
+//connection
+$con1 = $mysqli = new mysqli("localhost", "root", "", "pim");
+
+$res = $con1->query("SELECT * FROM produkte");
+
+while ($row = $res->fetch_assoc()) {
+    
+    $produktX = array('name'=>$row['name'], 'preis'=>$row['preis'] );
+    $produkte[] = $produktX;
+
+}
 
 function check($value1, $value2, $operator)
 {
@@ -58,18 +73,7 @@ function calculate_pro($value1, $value2, $operator)
 
 
 
-for($i=0; $i<2; $i++)
-{
-    //$produkte[0]
-    foreach($produkte[$i] as $key => $value)
-    {
-
-        //'name'=>'Apfel', 'preis'=>10, 'farbe'=>'rot'
-        if($key == 'preis')
-            //$produkte[0]['preis'] = 10 *1.1
-            $produkte[$i][$key] = calculate_pro($value, 0, '');
-    }
-}
 
 
-var_dump($produkte);
+
+

@@ -27,12 +27,14 @@
     //a) Schreibe eine Schleife, die die Zahlen von 1 bis 10 ausgibt.
 
         //for ($i = 1; $i <= 10; $i++) 
-        //{echo $i;}
+       // {
+            //echo $i;
+        //}
 
     //b) Schreibe eine Schleife, die die geraden Zahlen von 1 bis 20 ausgibt.
 
         //for ($i = 2; $i <= 20; $i += 2) 
-        //{echo $i;}
+        //{echo $i;if ($i%2==0)echo "gerade";}
 
     //c) Schreibe eine Schleife, die die Zahlen von 10 bis 1 rückwärts ausgibt.
 

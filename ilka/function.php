@@ -1,15 +1,16 @@
 <?php
-$produkt1 = array('name'=>'Apfel', 'preis'=>10, 'farbe'=>'rot' );
-$produkt2 = array('name'=>'Birne', 'preis'=>15, 'farbe'=>'grün' );
-$produkte = array($produkt1, $produkt2);
-
-function namen($param1, $param2)
-{
-
-}
-
+$produkte = array();
 $value2 = 20;
 $operator = '%';
+
+$db = new mysqli("localhost", "root", "", "produkte");
+$res = $db->query("SELECT * FROM produkte, stock WHERE produkte.stock = stock.s_id");
+while ($row = $res->fetch_assoc())
+{
+    $produkt_pro_preis = calculate_pro($row['preis'], $value2, $operator);
+    $produkte[] = $row;
+    array_push($produkte);
+}
 
 function check($value1, $value2, $operator)
 {
@@ -34,7 +35,7 @@ function check($value1, $value2, $operator)
     if ($ergebnis1 == true && $ergebnis2 == true && $ergebnis3 == true)
         return true;
     else
-        return false;
+        return $value1 . "-" . $value2 . "-" . $operator;
 }
 
 function calculate_pro($value1, $value2, $operator)
@@ -57,22 +58,3 @@ function calculate_pro($value1, $value2, $operator)
     return $value1 * (($value2 + 100)/100);
 
 }
-
-
-//i=0
-for($i=0; $i<2; $i++)
-{
-    //$produkte[0]
-    foreach($produkte[$i] as $key => $value)
-    {
-
-        //'name'=>'Apfel', 'preis'=>10, 'farbe'=>'rot'
-        if($key == 'preis')
-            //$produkte[0]['preis'] = 10 *1.1
-            $produkte[$i][$key] = calculate_pro($value, $value2, $operator);
-    }
-}
-
-
-var_dump($produkte);
-//anweisuingen

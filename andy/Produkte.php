@@ -3,9 +3,13 @@
 class Produkte
 {
 
+    public $id;
+
     public $name;
  
     public $preis;
+
+    public $stock;
 
     public $con1;
 
@@ -38,6 +42,21 @@ class Produkte
         //code
     }
 
+    public function save()
+    {
+        //INSERT INTO `produkte` (`id`, `name`, `preis`,  `stock`) VALUES (NULL, 'Apfel test', '1111','1');
+        
+        //$id;
+        $name =  $this->name;
+        $preis = $this->preis;
+        $stock = $this->stock;
+
+        $sql = "INSERT INTO `produkte` (`id`, `name`, `preis`, `stock`) VALUES (NULL, '$name', '$preis', '$stock')";
+        
+        
+        $this->con1->query($sql);
+    }
+
     public function calculate_pro($value1, $value2, $operator)
     {
 
@@ -66,4 +85,3 @@ class Produkte
     }
 
 }
-

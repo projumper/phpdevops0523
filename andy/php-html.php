@@ -1,24 +1,14 @@
 <?php
 
-include_once("function.php");
+include_once("Produkte.php");
 
-
+$p = new Produkte();
+$produkte = $p->fetchAll();
 
 echo "<html>";
 echo "<body><p>ich bin ein dynamsiches dokument!</p>";
 echo "<table border=\"1\">";
-echo "<tr>";
-
-$var = array("Name","Preis","Funktion");
-
-foreach ($var as $key => $value)
-    {echo "<td>";
-        echo $value;
-        echo "</td>";
-
-}
-
-echo "</tr>";
+echo "<tr><td>Name</td><td>Preis</td><td>Funktionen</td></tr>";
 
 for($i=0; $i<4; $i++)
 {
@@ -29,9 +19,14 @@ for($i=0; $i<4; $i++)
         echo "<td>";
         echo $value;
         echo "</td>";
-        
+        //echo "<td>".$value."</td>"
+        if($key == 'preis')
+            $price = $value;
+   
     }
-    echo "<td></td>";
+    echo "<td>";
+    echo $p->calculate_pro($price, 10, '%');
+    echo "</td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -44,6 +39,6 @@ echo '<form action ="" method="post">
 
 </form>';
 
-
+var_dump($_POST);
 
 echo "</body></html>";

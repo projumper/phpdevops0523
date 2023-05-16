@@ -45,6 +45,19 @@ class Task {
       
         public function save() {
           // Code, um den Task in der Datenbank zu speichern
+
+          //INSERT INTO `tasks` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES (NULL, 'schlafen', 'in_der_nacht_schlafen', '2023-05-16 16:31:14', '2023-05-16 20:00:00');
+        
+        //$id;
+        $title =  $this->title;
+        $description = $this->description;
+        $created_at = $this->created_at;
+        $updated_at = $this->updated_at;
+
+        $sql = "INSERT INTO `tasks` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES (NULL, '$title', '$description', '$created_at', '$updated_at')";
+        
+        
+        $this->con1->query($sql);
         }
       
         public function update() {

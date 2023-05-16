@@ -9,6 +9,7 @@ $produkte = array();
 //connection
 $con1 = $mysqli = new mysqli("localhost", "root", "", "pim");
 
+//lese alles aus aus der Datebnabk
 $res = $con1->query("SELECT * FROM produkte ");
 
 while ($row = $res->fetch_assoc()) {

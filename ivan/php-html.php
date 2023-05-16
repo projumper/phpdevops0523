@@ -1,8 +1,9 @@
 <?php
 
-include_once("function.php");
+include_once("OOP-dyn/Produkte.php");
 
-
+$p = new Produkte();
+$produkte = $p->fetchAll();
 
 echo "<html>";
 echo "<body><p>ich bin ein dynamsiches dokument!</p>";
@@ -24,7 +25,7 @@ for($i=0; $i<4; $i++)
    
     }
     echo "<td>";
-    echo calculate_pro($price, 10, '%');
+    echo $p->calculate_pro($price, 10, '%');
     echo "</td>";
     echo "</tr>";
 }

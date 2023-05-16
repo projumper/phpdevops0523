@@ -7,7 +7,7 @@
   <h1>Aufgabenverwaltungssystem</h1>
 
   <h2>Neue Aufgabe hinzufügen</h2>
-  <form action="taskmanager.php" method="POST">
+  <form action="" method="POST">
     <label for="title">Titel:</label>
     <input type="text" id="title" name="title" required>
 

@@ -19,7 +19,11 @@
 
   <h2>Aufgabenliste</h2>
   <ul>
-    <?php
+    
+<?php
+
+include_once("task.php");
+include_once("taskmanager.php");
       // Code zum Abrufen der Tasks und Anzeigen in der Liste
 
 

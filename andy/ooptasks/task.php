@@ -57,7 +57,7 @@ class Task {
         $sql = "INSERT INTO `tasks` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES (NULL, '$title', '$description', '$created_at', '$updated_at')";
         
         
-        $this->con1->query($sql);
+        
         }
       
         public function update() {

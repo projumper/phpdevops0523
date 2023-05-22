@@ -76,4 +76,28 @@ if($_POST)
     header('Location: aufgabenverwaltung.php');
 }
 
+?>
+
+<br>
+<br>
+<br>
+Suche:
+<br>
+
+<form action ="" method="post">
+<table border="0">
+    <tr>
+        <td><label>Search</label></td>
+        <td><input type="text" name="search" value=""/></td>
+    </tr>
+    </table>
+<input type="submit" value="Send"/><br>
+</form>
+
+<?php
+if(isset($_POST["search"]))
+{
+    $p->search($title);
+}
+//else (echo "keinen Datensatz gefunden")
 echo "</body></html>";

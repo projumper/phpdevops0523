@@ -88,4 +88,20 @@ class Tasks
             return true;
         }
     }
+
+    public function search($title)
+    {
+        $tasks = array();
+
+        $res = $this->con1->query("SELECT * FROM tasks WHERE title like %abcdefghijklmnopqrstuvwxyz%");
+
+        while ($row = $res->fetch_assoc()) {
+    
+            $taskX = array('id'=>$row['id'], 'title'=>$row['title'], 'description'=>$row['description'], 'comment'=>$row['comment'],'created_at'=>$row['created_at']
+            , 'updated_at'=>$row['updated_at']);
+            $tasks[] = $taskX;
+        }
+
+        return $tasks;
+    }
 }

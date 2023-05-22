@@ -9,7 +9,8 @@ $heute = date("d.m.Y");
 echo "<html>";
 echo "<body><p>Aufgabenverwaltung</p>";
 echo "<table border=\"1\">";
-echo "<tr><td>Title</td><td>Description</td><td>created_at</td><td>updated_at</td></tr>";
+echo '<tr><td>ID</td><td>Title</td><td>Description</td>
+<td>created_at</td><td>updated_at</td><td colspan="2">&nbsp;</td></tr>';
 
 $count = count($tasks);
 
@@ -23,6 +24,8 @@ for($i=0; $i<$count; $i++)
         echo $value;
         echo "</td>";
     }
+    echo '<td><a href="update.php?id=' . $tasks[$i]['id'] . '">ändern</a> 
+    <a href="delete.php?id=' . $tasks[$i]['id'] . '">löschen</a></td>';
     echo "</tr>";
 }
 echo "</table>";

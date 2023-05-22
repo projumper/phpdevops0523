@@ -9,7 +9,7 @@ $heute = date("Y-m-d");
 echo "<html>";
 echo "<body><p>Aufgabenverwaltung</p>";
 echo "<table border=\"1\">";
-echo '<tr><td>ID</td><td>Title</td><td>Description</td>
+echo '<tr><td>ID</td><td>Title</td><td>Description</td><td>Comment</td>
 <td>created_at</td><td>updated_at</td><td colspan="2">&nbsp;</td></tr>';
 
 $count = count($tasks);
@@ -47,6 +47,10 @@ Neu erstellen:
         <td><input type="text" name="description" value=""/></td>
     </tr>
     <tr>
+        <td><label>Comment</label></td>
+        <td><input type="text" name="comment" value=""/></td>
+    </tr>
+    <tr>
         <td><label>created_at</label></td>
         <td><input type="text" name="created_at" value="<?php echo $heute; ?>"/>
         </td>
@@ -63,6 +67,7 @@ if($_POST)
 {
     $p->title = $_POST['title'];
     $p->description = $_POST['description'];
+    $p->comment = $_POST['comment'];
     $p->created_at = $_POST['created_at'];
     $p->updated_at = $_POST['updated_at'];
 

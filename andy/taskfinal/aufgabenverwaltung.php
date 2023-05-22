@@ -5,7 +5,7 @@ $p = new Tasks();
 
 $tasks = $p->fetchAll();
 
-$heute = date("d.m.Y");
+$heute = date("Y-m-d");
 echo "<html>";
 echo "<body><p>Aufgabenverwaltung</p>";
 echo "<table border=\"1\">";
@@ -67,6 +67,8 @@ if($_POST)
     $p->updated_at = $_POST['updated_at'];
 
     $p->save();
+
+    header('Location: aufgabenverwaltung.php');
 }
 
 echo "</body></html>";

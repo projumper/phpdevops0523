@@ -55,11 +55,10 @@ class Tasks
         $created_at = $this->created_at;
         $updated_at = $this->updated_at;
 
-        $sql = "INSERT INTO tasks (title)" .
-        "VALUES ('$title')";
+        echo $sql = "INSERT INTO tasks (title, description, created_at, updated_at)" .
+                "VALUES ('" . $title ."', '" .  $description ."', '" . $created_at . "', '" . $updated_at ."')";
         if ($this->con1->query($sql) === TRUE) {
-    //    $res = $this->con1->query("INSERT INTO tasks (title, description, created_at, updated_at)" .
-    //            "VALUES ($title, $description, $created_at, $updated_at)");
+        
             return true;
         }
     }

@@ -36,7 +36,7 @@ class Tasks
     {
         $tasks = array();
 
-        $res = $this->con1->query("SELECT * FROM tasks WHERE id = 1");
+        $res = $this->con1->query("SELECT * FROM tasks WHERE id = $id");
 
         while ($row = $res->fetch_assoc()) {
     
@@ -79,8 +79,9 @@ class Tasks
         $created_at = $this->created_at;
         $updated_at = $this->updated_at;
 
-        $sql = $this->con1->query("UPDATE tasks SET title = $title, description = $description, 
-            created_at = $created_at, updated_at = $updated_at WHERE id = $id");
+        $sql = "UPDATE tasks SET title = '" . $title . "', description = '" . $description . "', created_at = '" . $created_at . "', 
+        updated_at = '" . $updated_at . "' WHERE id = $id";
+
         if ($this->con1->query($sql) === TRUE) {
             return true;
         }

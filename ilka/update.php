@@ -3,20 +3,21 @@ include_once("Tasks.php");
 
 $p = new Tasks();
 
-if (isset($_POST['id']))
-    $_GET['id'] = $_POST['id'];
-
-$tasks = $p->fetch($_GET['id']);
-
-if($_POST)
+if (isset($_GET['id']))
 {
-    $p->id = $_POST['id'];
+    $tasks = $p->fetch($_GET['id']);
+}
+
+if (isset($_POST['id']))
+{
+    $tasks = $p->fetch($_POST['id']);
+
     $p->title = $_POST['title'];
     $p->description = $_POST['description'];
     $p->created_at = $_POST['created_at'];
     $p->updated_at = $_POST['updated_at'];
 
-    $p->updated($p->id);
+    $p->updated($_POST['id']);
 }
 
 echo "<html>";
@@ -41,7 +42,7 @@ if($_POST)
 {
 ?>
 <p>Der Datensatz wurde geändert.</p>
-<p><a href="aufgabenverwaltung.php">zurück</a></p>';
+<p><a href="aufgabenverwaltung.php">zurück</a></p>
 <?php
 }
 ?>

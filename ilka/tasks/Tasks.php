@@ -32,6 +32,25 @@ class Tasks
         return $tasks;
     }
 
+    public function fetchSearch()
+    {
+        $tasks = array();
+
+        $sql = "SELECT * FROM tasks WHERE title like '%" . $_POST['search'] . "%' or description like '%" . $_POST['search'] . "%'";
+
+        $result = $this->con1->query($sql);
+
+        while ($row = $result->fetch_assoc()) {
+    
+            $taskX = array('id'=>$row['id'], 'title'=>$row['title'], 'description'=>$row['description'], 'created_at'=>$row['created_at']
+            , 'updated_at'=>$row['updated_at']);
+            $tasks[] = $taskX;
+
+        }
+
+        return $tasks;
+    }
+
     public function fetch($id)
     {
         $tasks = array();
@@ -55,12 +74,14 @@ class Tasks
         $created_at = $this->created_at;
         $updated_at = $this->updated_at;
 
-        $sql = "INSERT INTO tasks (title)" .
-        "VALUES ('$title')";
-        if ($this->con1->query($sql) === TRUE) {
-    //    $res = $this->con1->query("INSERT INTO tasks (title, description, created_at, updated_at)" .
-    //            "VALUES ($title, $description, $created_at, $updated_at)");
-            return true;
+        $sql = "INSERT INTO `tasks`(`title`, `description`, `created_at`, `updated_at`) VALUES ('$title','$description','$created_at','$updated_at')";
+
+        $result = $this->con1->query($sql);
+
+        if ($result == TRUE) {
+
+        echo "New record created successfully.";
+
         }
     }
 

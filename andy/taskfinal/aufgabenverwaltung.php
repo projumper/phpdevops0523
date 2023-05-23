@@ -63,7 +63,7 @@ Neu erstellen:
 <input type="submit" value="Send"/><br>
 </form>
 <?php
-if($_POST)
+if(isset($_POST["title"]))
 {
     $p->title = $_POST['title'];
     $p->description = $_POST['description'];
@@ -97,7 +97,31 @@ Suche:
 <?php
 if(isset($_POST["search"]))
 {
-    $p->search($title);
+    $tasks=$p->search($_POST["search"]); 
+
+echo "<table border=\"1\">";
+echo '<tr><td>ID</td><td>Title</td><td>Description</td><td>Comment</td>
+<td>created_at</td><td>updated_at</td><td colspan="2">&nbsp;</td></tr>';
+
+$count = count($tasks);
+if ($count <=0)
+echo "Datensatz nicht gefunden";
+
+for($i=0; $i<$count; $i++)
+{
+    echo "<tr>";
+    $price = 0;
+    foreach($tasks[$i] as $key => $value)
+    {
+        echo "<td>";
+        echo $value;
+        echo "</td>";
+    }
+    echo '<td><a href="update.php?id=' . $tasks[$i]['id'] . '">ändern</a> 
+    <a href="delete.php?id=' . $tasks[$i]['id'] . '">löschen</a></td>';
+    echo "</tr>";
 }
-//else (echo "keinen Datensatz gefunden")
+echo "</table>";
+}
+
 echo "</body></html>";

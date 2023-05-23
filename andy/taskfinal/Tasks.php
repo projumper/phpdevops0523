@@ -93,7 +93,7 @@ class Tasks
     {
         $tasks = array();
 
-        $res = $this->con1->query("SELECT * FROM tasks WHERE title like %abcdefghijklmnopqrstuvwxyz%");
+        $res = $this->con1->query("SELECT * FROM tasks WHERE title like '%$title%'");
 
         while ($row = $res->fetch_assoc()) {
     

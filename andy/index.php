@@ -1,3 +1,3 @@
 <?php
-echo "ivan ist cool"
+echo "andy ist cool"
 ?>

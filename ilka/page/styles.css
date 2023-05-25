@@ -1,9 +1,9 @@
-div.navbar {
+.navbar {
     overflow: hidden;
     text-decoration: none;
   }
 
-div.navbar a.active {
+.navbar a.active {
     color: blue;
   }
 

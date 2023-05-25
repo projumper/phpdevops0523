@@ -2,9 +2,8 @@
 require_once("inhalt.php");
 require_once("header.php");
 
-if ($POST)
-{
-    echo "Ihre E-Mail-Adresse wurde eingetragen."
+if ($POST){
+    echo "Ihre E-Mail-Adresse wurde eingetragen.";
 }
 ?>
 <p><br></p>

@@ -1,6 +1,6 @@
 div.navbar {
-    background-color: #333;
     overflow: hidden;
+    text-decoration: none;
   }
 
 div.navbar a.active {

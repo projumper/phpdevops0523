@@ -7,7 +7,7 @@ if ($POST){
 }
 ?>
 <p><br></p>
-<?php
+<?php 
 echo $content;
 echo"<br><br>";
 ?>

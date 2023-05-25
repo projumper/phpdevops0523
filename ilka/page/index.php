@@ -6,7 +6,6 @@ require_once("header.php");
 <?php
 echo $content;
 echo"<br><br>";
-require_once("functions.php");
 ?>
 <p><br></p>
 <?php

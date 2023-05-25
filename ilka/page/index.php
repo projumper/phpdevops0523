@@ -7,6 +7,10 @@ require_once("header.php");
 echo $content;
 echo"<br><br>";
 ?>
+<form action="" method="post">
+    E-Mail: <input type="text" name="mail"><br>
+    <input type="submit" value="Senden">
+</form>
 <p><br></p>
 <?php
 require_once("footer.php");

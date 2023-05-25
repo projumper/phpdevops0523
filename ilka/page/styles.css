@@ -12,5 +12,6 @@ div.navbar a.active {
 }
 
 .footer {
+  color: white;
   background-color: blue;
 }

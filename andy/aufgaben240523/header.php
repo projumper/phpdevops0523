@@ -1,6 +1,6 @@
 <html>
 <head>
-   <title>Meine Homepage - <?php
+   <title>Aufagbenverwaltung - <?php
                 // Ausgabe der Variable $title (Definiert in der jeweiligen, aufgerufenen Seite) um den Seitentitel in dem Browserfenster anzuzeigen
                 echo $title; 
                ?></title>
@@ -13,7 +13,7 @@
 <!-- Erste Tabellenzeile - Gibt den allgemeinen Seitentitel aus. -->
 <tr>
     <td colspan="2">
-        <h3>Meine Homepage</h3>
+        <h3>Aufgabenverwaltung</h3>
     </td>
 </tr>
 

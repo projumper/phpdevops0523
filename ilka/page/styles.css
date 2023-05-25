@@ -4,8 +4,7 @@ div.navbar {
   }
 
 div.navbar a.active {
-    background-color: #04AA6D;
-    color: white;
+    color: blue;
   }
 
 .image {

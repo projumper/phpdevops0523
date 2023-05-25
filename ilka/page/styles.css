@@ -7,3 +7,7 @@ div.navbar a.active {
     background-color: #04AA6D;
     color: white;
   }
+
+.image {
+  width: 3cm;
+}

@@ -12,7 +12,7 @@ if ($POST)
 echo $content;
 echo"<br><br>";
 ?>
-<form action="" method="post">
+<form action="index.php" method="post">
     E-Mail: <input type="text" name="mail"> 
     <input type="submit" value="Abonnieren">
 </form>

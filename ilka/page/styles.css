@@ -1,7 +1,10 @@
 .navbar {
     overflow: hidden;
-    text-decoration: none;
   }
+
+a.navbar {
+  text-decoration: none;
+}
 
 .navbar a.active {
     color: blue;

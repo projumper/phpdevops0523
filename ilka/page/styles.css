@@ -10,3 +10,7 @@ div.navbar a.active {
 .image {
   width: 2cm;
 }
+
+.footer {
+  background-color: blue;
+}

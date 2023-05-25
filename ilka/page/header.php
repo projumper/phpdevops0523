@@ -13,9 +13,9 @@
             <td align="right">
             <div class="navbar">
                 <a class="active" href="#">Home</a><br>
-                <a href="#">Kontakt</a><br>
-                <a href="#">Wohnungen</a><br>
-                <a href="#">Suche</a>
+                <a href="#">Seite 2</a><br>
+                <a href="#">Seite 3</a><br>
+                <a href="#">Seite 4</a>
             </div>
             </td>
         </tr>

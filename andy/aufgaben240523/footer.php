@@ -8,8 +8,9 @@
 
         <?php
         include "functions.php"
-        echo $heute
+    
         ?>
+        
 
     </td>
 </tr>

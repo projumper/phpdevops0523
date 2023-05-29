@@ -12,12 +12,12 @@ if ($conn->connect_error) {
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
  }
 
-$sql = "CREATE TABLE `tasks`.`tasks` (`id` INT(11) NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `description` TEXT NOT NULL , `comment` TEXT NOT NULL , `created_at` DATE NOT NULL , `updated_at` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
+$sql = "CREATE TABLE `tasks` (`id` INT(11) NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `description` TEXT NOT NULL , `comment` TEXT NOT NULL , `created_at` DATE NOT NULL , `updated_at` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
 $res = $conn->query($sql);
 
 
 if ($conn->query($sql) === TRUE) {
-echo "Tabelle 'users' erfolgreich erstellt.";
+echo "Tabelle 'tasks' erfolgreich erstellt.";
 } else {
 echo "Fehler beim Erstellen der Tabelle: " . $conn->error;
 }

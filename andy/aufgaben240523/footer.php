@@ -5,6 +5,12 @@
 <tr>
     <td colspan="2">
         (C) by Andy Maass
+
+        <?php
+        include "functions.php"
+        echo $heute
+        ?>
+
     </td>
 </tr>
 </table>

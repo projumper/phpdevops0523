@@ -8,7 +8,6 @@
 
         <?php
         include "functions.php"
-    
         ?>
         
 

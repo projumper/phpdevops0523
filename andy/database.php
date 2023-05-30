@@ -2,10 +2,10 @@
 $servername = "awseb-e-uy7egtc6ti-stack-awsebrdsdatabase-icx5pfyyg3eo.ckfipzcqm9gp.eu-central-1.rds.amazonaws.com";  
 $username = "ebroot";  
 $password = "Prodigy02021983";  
-$dbname = "tasks"
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
+$conn = new mysqli($servername, $username, $password);
+$conn->select_db ("tasks");
 // Verbindung überprüfen:
 
 if ($conn->connect_error) {

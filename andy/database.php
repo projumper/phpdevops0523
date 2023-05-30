@@ -1,7 +1,8 @@
 <?php
-$servername = "localhost";  
-$username = "root";  
-$password = "";  
+error_reporting(E_ALL);
+$servername = "awseb-e-uy7egtc6ti-stack-awsebrdsdatabase-icx5pfyyg3eo.ckfipzcqm9gp.eu-central-1.rds.amazonaws.com";  
+$username = "ebroot";  
+$password = "Prodigy02021983";  
 
 
 $conn = new mysqli($servername, $username, $password);
@@ -12,7 +13,12 @@ if ($conn->connect_error) {
     die("Verbindung fehlgeschlagen: " . $conn->connect_error);
  }
 
-$sql = "CREATE TABLE `tasks` (`id` INT(11) NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `description` TEXT NOT NULL , `comment` TEXT NOT NULL , `created_at` DATE NOT NULL , `updated_at` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
+$sql = "CREATE TABLE `tasks2` (`id` INT(11) NOT NULL AUTO_INCREMENT ,
+                             `title` VARCHAR(255) NOT NULL ,
+                             `description` TEXT NOT NULL ,
+                             `comment` TEXT NOT NULL , 
+                             `created_at` DATE NOT NULL , 
+                             `updated_at` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
 $res = $conn->query($sql);
 
 

@@ -9,7 +9,7 @@ if(isset($_POST["submit"])) {
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["datei"]["name"]);
 
-    if ($_FILES["datei"]["size"] < 5 && isValidPDF($contentType))
+    if ($_FILES["datei"]["size"] < 5000000 && isValidPDF($contentType))
     {
         move_uploaded_file($_FILES["datei"]["tmp_name"], $target_file);
         echo "<p>Bild hochgeladen</p><br>";

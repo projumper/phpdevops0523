@@ -74,13 +74,16 @@ $lines = file($inputFile, FILE_IGNORE_NEW_LINES);
 foreach ($lines as $line) {
     // Hier kannst du deine Filterlogik anwenden
     // Beispiel: Filtere Zeilen, die das Wort "Filterwort" enthalten
-    if (strpos($line, 'Filterwort') === false) {
+    if (strpos($line, 'Filterwort') !== false) {
         $filteredLines[] = $line;
     }
 }
 
 // Gefilterten Inhalt in neue Datei schreiben
 $fileContents = implode(PHP_EOL, $filteredLines);
+
+var_dump($filteredLines);
+
 file_put_contents($outputFile, $fileContents);
 
 echo 'Die Datei wurde gefiltert und der gefilterte Inhalt wurde in eine neue Datei gespeichert.';

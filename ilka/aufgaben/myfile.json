@@ -1,0 +1,1 @@
+{"1":{"id":"$row[\"id\"]","title":"$row[\"title\"]","beschreibung":"$row[\"beschreibung\"]","erstellungsdatum":"$row[\"erstellungsdatum\"]","faelligkeitsdatum":"$row[\"faelligkeitsdatum\"]"}}
